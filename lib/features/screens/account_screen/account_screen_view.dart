@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import '../main_screen/contacts_row/index.dart';
 
 class AccountScreenView extends StatelessWidget {
-  const AccountScreenView({super.key});
+  final List<String> measurments = [
+    'name',
+    'height',
+    'weight',
+    'date of birth',
+    'age',
+    'eyes',
+    'hair'
+  ];
+  AccountScreenView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,18 +52,21 @@ class AccountScreenView extends StatelessWidget {
                           showDialog(
                             context: context,
                             builder: (BuildContext context) {
-                              return AlertDialog(
+                              return SimpleDialog(
+                                shape: ContinuousRectangleBorder(),
                                 title: const Text('Measurments'),
-                                content: SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      
-                                    ],
-                                  ),
-                                ),
+                                contentPadding: EdgeInsets.all(8),
+                                children: [
+                                  for (String item in measurments)
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('$item:'),
+                                        Text('value'),
+                                      ],
+                                    ),
+                                ],
                               );
                             },
                           );
