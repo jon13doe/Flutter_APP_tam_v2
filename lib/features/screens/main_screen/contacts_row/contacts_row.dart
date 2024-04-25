@@ -18,16 +18,11 @@ class ContactsRow extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // if (withImg)
-          //   Image.asset(
-          //     'assets/logo/logo_white.png',
-          //     scale: 1.5,
-          //   )
-          // else
-          //   const Text('Contact with us'),
-          // const SizedBox(
-          //   height: 16,
-          // ),
+          if (withImg)
+            Image.asset(
+              'assets/logo/logo_white.png',
+              scale: 1.5,
+            ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

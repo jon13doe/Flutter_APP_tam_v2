@@ -9,8 +9,7 @@ class TamAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: OrientationBuilder(
+      home: OrientationBuilder(
           builder: (BuildContext context, Orientation orientation) {
             if (orientation == Orientation.portrait) {
               return const MobilePortraitScreen();
@@ -19,7 +18,6 @@ class TamAppView extends StatelessWidget {
             }
           },
         ),
-      ),
     );
   }
 }
