@@ -40,8 +40,8 @@ class MobileLandscapeScreen extends StatelessWidget {
                               Positioned(
                                 top: 8,
                                 child: Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  decoration: BoxDecoration(
+                                  padding: const EdgeInsets.all(8.0),
+                                  decoration: const BoxDecoration(
                                     color: Colors.orangeAccent,
                                     borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(8),
@@ -57,8 +57,8 @@ class MobileLandscapeScreen extends StatelessWidget {
                                 bottom: 8,
                                 right: 0,
                                 child: Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  decoration: BoxDecoration(
+                                  padding: const EdgeInsets.all(8.0),
+                                  decoration: const BoxDecoration(
                                     color: Colors.orangeAccent,
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(8),
@@ -81,17 +81,17 @@ class MobileLandscapeScreen extends StatelessWidget {
               Flexible(
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(vertical: 8.0).copyWith(right: 8.0),
+                      const EdgeInsets.symmetric(vertical: 8.0).copyWith(right: 8.0),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          SizedBox(
                             width: 32,
                             child: IconButton(
                               onPressed: () {},
-                              icon: Icon(Icons.calendar_month),
+                              icon: const Icon(Icons.calendar_month),
                             ),
                           ),
                           const ContactsRow(withImg: false),
@@ -114,32 +114,30 @@ class MobileLandscapeScreen extends StatelessWidget {
                         ),
                       ),
                       Flexible(
-                        child: Container(
-                          child: CustomScrollView(
-                            slivers: [
-                              SliverList(
-                                  delegate: SliverChildBuilderDelegate(
-                                      childCount: 5, (context, index) {
-                                return Padding(
-                                  padding: EdgeInsets.only(
-                                      top: index != 0 ? 8.0 : 0),
-                                  child: Container(
-                                      color: Colors.amberAccent,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Text('message N$index'),
-                                          IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(Icons.arrow_back),
-                                          ),
-                                        ],
-                                      )),
-                                );
-                              })),
-                            ],
-                          ),
+                        child: CustomScrollView(
+                          slivers: [
+                            SliverList(
+                                delegate: SliverChildBuilderDelegate(
+                                    childCount: 5, (context, index) {
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                    top: index != 0 ? 8.0 : 0),
+                                child: Container(
+                                    color: Colors.amberAccent,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                      children: [
+                                        Text('message N$index'),
+                                        IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(Icons.arrow_back),
+                                        ),
+                                      ],
+                                    )),
+                              );
+                            })),
+                          ],
                         ),
                       ),
                     ],

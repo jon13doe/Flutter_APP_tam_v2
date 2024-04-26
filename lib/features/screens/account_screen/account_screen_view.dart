@@ -19,8 +19,8 @@ class AccountScreenView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
-        title: Text('TAM img'),
-        actions: [
+        title: const Text('TAM img'),
+        actions: const [
           Icon(
             Icons.account_circle,
             size: 32,
@@ -53,9 +53,9 @@ class AccountScreenView extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) {
                               return SimpleDialog(
-                                shape: ContinuousRectangleBorder(),
+                                shape: const ContinuousRectangleBorder(),
                                 title: const Text('Measurments'),
-                                contentPadding: EdgeInsets.all(8),
+                                contentPadding: const EdgeInsets.all(8),
                                 children: [
                                   for (String item in measurments)
                                     Row(
@@ -63,7 +63,7 @@ class AccountScreenView extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text('$item:'),
-                                        Text('value'),
+                                        const Text('value'),
                                       ],
                                     ),
                                 ],
@@ -99,8 +99,8 @@ class AccountScreenView extends StatelessWidget {
                       bottom: 8,
                       right: 0,
                       child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: const BoxDecoration(
                           color: Colors.orangeAccent,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(8),

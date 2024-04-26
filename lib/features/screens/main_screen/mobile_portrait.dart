@@ -39,8 +39,8 @@ class MobilePortraitScreen extends StatelessWidget {
                             Positioned(
                               top: 8,
                               child: Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: const BoxDecoration(
                                   color: Colors.orangeAccent,
                                   borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(8),
@@ -56,8 +56,8 @@ class MobilePortraitScreen extends StatelessWidget {
                               bottom: 8,
                               right: 0,
                               child: Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: const BoxDecoration(
                                   color: Colors.orangeAccent,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(8),
@@ -84,7 +84,7 @@ class MobilePortraitScreen extends StatelessWidget {
               child: Container(
                 height: kToolbarHeight,
                 color: Colors.amberAccent,
-                child: Center(
+                child: const Center(
                   child: Text('TAM img'),
                 ),
               ),
@@ -122,8 +122,8 @@ class MobilePortraitScreen extends StatelessWidget {
                     Positioned(
                       top: 8,
                       child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: const BoxDecoration(
                           color: Colors.orangeAccent,
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(8),
@@ -139,8 +139,8 @@ class MobilePortraitScreen extends StatelessWidget {
                       bottom: 8,
                       right: 0,
                       child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: const BoxDecoration(
                           color: Colors.orangeAccent,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(8),

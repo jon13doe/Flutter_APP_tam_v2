@@ -7,6 +7,6 @@ class TamApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TamAppView();
+    return const TamAppView();
   }
 }
