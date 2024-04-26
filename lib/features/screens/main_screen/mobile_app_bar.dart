@@ -11,7 +11,10 @@ class MobileAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: Colors.orangeAccent,
-      title: const Text('TAM img'),
+      title: Image.asset(
+        'assets/logo/logo_white.png',
+        scale: 1.5,
+      ),
       actions: [
         TextButton(
             onPressed: () {},

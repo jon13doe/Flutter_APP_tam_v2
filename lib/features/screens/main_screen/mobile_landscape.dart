@@ -80,8 +80,8 @@ class MobileLandscapeScreen extends StatelessWidget {
               ),
               Flexible(
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8.0).copyWith(right: 8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0)
+                      .copyWith(right: 8.0),
                   child: Column(
                     children: [
                       Row(
@@ -94,7 +94,7 @@ class MobileLandscapeScreen extends StatelessWidget {
                               icon: const Icon(Icons.calendar_month),
                             ),
                           ),
-                          const ContactsRow(withImg: false),
+                          const ContactsRow(),
                           Container(
                             color: Colors.amber,
                             width: 32,
@@ -110,7 +110,12 @@ class MobileLandscapeScreen extends StatelessWidget {
                         child: Container(
                           height: kToolbarHeight,
                           color: Colors.amberAccent,
-                          child: const Center(child: Text('TAM img')),
+                          child: Center(
+                            child: Image.asset(
+                              'assets/logo/logo_white.png',
+                              scale: 1.5,
+                            ),
+                          ),
                         ),
                       ),
                       Flexible(
@@ -120,13 +125,12 @@ class MobileLandscapeScreen extends StatelessWidget {
                                 delegate: SliverChildBuilderDelegate(
                                     childCount: 5, (context, index) {
                               return Padding(
-                                padding: EdgeInsets.only(
-                                    top: index != 0 ? 8.0 : 0),
+                                padding:
+                                    EdgeInsets.only(top: index != 0 ? 8.0 : 0),
                                 child: Container(
                                     color: Colors.amberAccent,
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.end,
+                                      mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
                                         Text('message N$index'),
                                         IconButton(

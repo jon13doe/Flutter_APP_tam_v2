@@ -1,6 +1,5 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:user_repository/user_repository.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'my_text_field.dart';
@@ -18,7 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final emailController = TextEditingController();
 	final nameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-	IconData iconPassword = CupertinoIcons.eye_fill;
+	IconData iconPassword = Icons.visibility_off;
 	bool obscurePassword = true;
 	bool signUpRequired = false;
 
@@ -58,7 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Email',
                   obscureText: false,
                   keyboardType: TextInputType.emailAddress,
-                  prefixIcon: const Icon(CupertinoIcons.mail_solid),
+                  prefixIcon: const Icon(Icons.mail_outlined),
                   validator: (val) {
                     if(val!.isEmpty) {
                       return 'Please fill in this field';													
@@ -77,7 +76,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Password',
                   obscureText: obscurePassword,
                   keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: const Icon(CupertinoIcons.lock_fill),
+                  prefixIcon: const Icon(Icons.lock_outline),
                   onChanged: (val) {
                     if(val!.contains(RegExp(r'[A-Z]'))) {
                       setState(() {
@@ -131,10 +130,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       setState(() {
                         obscurePassword = !obscurePassword;
                         if(obscurePassword) {
-                          iconPassword = CupertinoIcons.eye_fill;
-                        } else {
-                          iconPassword = CupertinoIcons.eye_slash_fill;
-                        }
+                        iconPassword = Icons.visibility_off;
+                      } else {
+                        iconPassword = Icons.visibility;
+                      }
                       });
                     },
                     icon: Icon(iconPassword),
@@ -214,7 +213,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Name',
                   obscureText: false,
                   keyboardType: TextInputType.name,
-                  prefixIcon: const Icon(CupertinoIcons.person_fill),
+                  prefixIcon: const Icon(Icons.person),
                   validator: (val) {
                     if(val!.isEmpty) {
                       return 'Please fill in this field';													

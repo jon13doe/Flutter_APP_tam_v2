@@ -79,27 +79,17 @@ class MobilePortraitScreen extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: kToolbarHeight,
-                color: Colors.amberAccent,
-                child: const Center(
-                  child: Text('TAM img'),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Image.asset(
+                    'assets/logo/logo_white.png',
+                    scale: 1.5,
+                  ),
                 ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0)
-                  .copyWith(bottom: 8.0),
-              child: Container(
-                color: Colors.amberAccent,
-                child: const ContactsRow(
-                  withImg: false,
-                ),
-              ),
+                const ContactsRow(),
+              ],
             ),
           ),
           SliverList(
@@ -158,11 +148,14 @@ class MobilePortraitScreen extends StatelessWidget {
             );
           })),
           SliverToBoxAdapter(
-            child: Container(
-              color: Colors.amberAccent,
-              child: const ContactsRow(
-                withImg: true,
-              ),
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/logo/logo_white.png',
+                  scale: 1.5,
+                ),
+                const ContactsRow(),
+              ],
             ),
           ),
         ],
