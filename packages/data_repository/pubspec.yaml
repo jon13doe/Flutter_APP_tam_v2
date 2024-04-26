@@ -1,0 +1,22 @@
+name: flutter_package_data_fetching_data_repository
+description: "data_repository for fetching data teamplate Flutter project"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  equatable: ^2.0.5
+  http: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
