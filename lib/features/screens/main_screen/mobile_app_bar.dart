@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-// import 'package:tam_app_v2/features/screens/account_screen/account_screen_view.dart';
-
-import '../account_screen/auth_screen/views/welcome_screen.dart';
+import 'package:tam_app_v2/features/screens/account_screen/account_screen_view.dart';
 
 class MobileAppBar extends StatelessWidget {
   const MobileAppBar({super.key});
@@ -38,7 +35,7 @@ class MobileAppBar extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const WelcomeScreen();
+              return const AccountScreenView();
             }));
           },
         ),

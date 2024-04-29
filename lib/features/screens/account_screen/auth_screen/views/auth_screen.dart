@@ -1,24 +1,23 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tam_app_v2/features/blocks/authentication_bloc/authentication_bloc.dart';
 
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import '../../../blocs/authentication_bloc/authentication_bloc.dart';
-// import '../blocs/sign_up_bloc/sign_up_bloc.dart';
-// import '../blocs/sing_in_bloc/sign_in_bloc.dart';
 import '../../../main_screen/contacts_row/index.dart';
+import '../blocs/sign_up_bloc/sign_up_bloc.dart';
+import '../blocs/sing_in_bloc/sign_in_bloc.dart';
 import 'sign_in_screen.dart';
 import 'sign_up_screen.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
+  State<AuthScreen> createState() => _AuthScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen>
+class _AuthScreenState extends State<AuthScreen>
     with TickerProviderStateMixin {
   late TabController tabController;
 
@@ -30,21 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       length: 2,
       vsync: this,
     );
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
-    super.dispose();
   }
 
   @override
@@ -136,21 +121,21 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       Expanded(
                           child: TabBarView(
                         controller: tabController,
-                        children: const [
-                          SignInScreen(),
-                          SignUpScreen(),
-                          // BlocProvider<SignInBloc>(
-                          // 	create: (context) => SignInBloc(
-                          // 		context.read<AuthenticationBloc>().userRepository
-                          // 	),
-                          // 	child: const SignInScreen(),
-                          // ),
-                          // BlocProvider<SignUpBloc>(
-                          // 	create: (context) => SignUpBloc(
-                          // 		context.read<AuthenticationBloc>().userRepository
-                          // 	),
-                          // 	child: const SignUpScreen(),
-                          // ),
+                        children: [
+                          const SignInScreen(),
+                          const SignUpScreen(),
+                          BlocProvider<SignInBloc>(
+                          	create: (context) => SignInBloc(
+                          		context.read<AuthenticationBloc>().userRepository
+                          	),
+                          	child: const SignInScreen(),
+                          ),
+                          BlocProvider<SignUpBloc>(
+                          	create: (context) => SignUpBloc(
+                          		context.read<AuthenticationBloc>().userRepository
+                          	),
+                          	child: const SignUpScreen(),
+                          ),
                         ],
                       )),
                     ],

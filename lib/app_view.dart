@@ -28,7 +28,7 @@ class TamAppView extends StatelessWidget {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Center(
-            child: Text('sdfsdf'),
+            child: Text('Not Android'),
           ),
         );
     }

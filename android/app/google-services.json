@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "559550843585",
+    "firebase_url": "https://t-a-m-ua-v2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "t-a-m-ua-v2",
+    "storage_bucket": "t-a-m-ua-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559550843585:android:1e7b0591b8eacf4aa72240",
+        "android_client_info": {
+          "package_name": "com.example.tam_app_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559550843585-nctkcpog04gt1tq0jvq96h1vlbd4gfk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaWEwBrHs4QyRNGYTBikJoz7Ld-o1Pw60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559550843585-nctkcpog04gt1tq0jvq96h1vlbd4gfk6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "559550843585-dqpmkp22dmlsp4412mm52qkjk6i5gbmc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tamAppV2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
