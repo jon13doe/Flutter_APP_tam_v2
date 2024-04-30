@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:user_repository/user_repository.dart';
 
-import '../blocs/sign_up_bloc/sign_up_bloc.dart';
 import 'my_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -29,21 +26,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignUpBloc, SignUpState>(
-      listener: (context, state) {
-        if (state is SignUpSuccess) {
-          setState(() {
-            signUpRequired = false;
-          });
-        } else if (state is SignUpProcess) {
-          setState(() {
-            signUpRequired = true;
-          });
-        } else if (state is SignUpFailure) {
-          return;
-        }
-      },
-      child: Form(
+    // return BlocListener<SignUpBloc, SignUpState>(
+    //   listener: (context, state) {
+    //     if (state is SignUpSuccess) {
+    //       setState(() {
+    //         signUpRequired = false;
+    //       });
+    //     } else if (state is SignUpProcess) {
+    //       setState(() {
+    //         signUpRequired = true;
+    //       });
+    //     } else if (state is SignUpFailure) {
+    //       return;
+    //     }
+    //   },
+    //   child: Form(
+      return Form(
         key: _formKey,
         child: Center(
           child: Column(
@@ -259,7 +257,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ],
           ),
         ),
-      ),
+      // ),
     );
   }
 }

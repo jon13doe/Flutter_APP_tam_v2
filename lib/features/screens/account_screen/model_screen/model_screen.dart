@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../../main_screen/contacts_row/index.dart';
 
@@ -23,25 +22,6 @@ class _AccountScreenViewState extends State<ModelScreen> {
     'eyes',
     'hair'
   ];
-
-   @override
-  void initState() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

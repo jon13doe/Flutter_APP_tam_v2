@@ -1,12 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tam_app_v2/features/blocks/authentication_bloc/authentication_bloc.dart';
 
 import '../../../main_screen/contacts_row/index.dart';
-import '../blocs/sign_up_bloc/sign_up_bloc.dart';
-import '../blocs/sing_in_bloc/sign_in_bloc.dart';
 import 'sign_in_screen.dart';
 import 'sign_up_screen.dart';
 
@@ -121,21 +117,21 @@ class _AuthScreenState extends State<AuthScreen>
                       Expanded(
                           child: TabBarView(
                         controller: tabController,
-                        children: [
-                          const SignInScreen(),
-                          const SignUpScreen(),
-                          BlocProvider<SignInBloc>(
-                          	create: (context) => SignInBloc(
-                          		context.read<AuthenticationBloc>().userRepository
-                          	),
-                          	child: const SignInScreen(),
-                          ),
-                          BlocProvider<SignUpBloc>(
-                          	create: (context) => SignUpBloc(
-                          		context.read<AuthenticationBloc>().userRepository
-                          	),
-                          	child: const SignUpScreen(),
-                          ),
+                        children: const [
+                          SignInScreen(),
+                          SignUpScreen(),
+                          // BlocProvider<SignInBloc>(
+                          // 	create: (context) => SignInBloc(
+                          // 		context.read<AuthenticationBloc>().userRepository
+                          // 	),
+                          // 	child: const SignInScreen(),
+                          // ),
+                          // BlocProvider<SignUpBloc>(
+                          // 	create: (context) => SignUpBloc(
+                          // 		context.read<AuthenticationBloc>().userRepository
+                          // 	),
+                          // 	child: const SignUpScreen(),
+                          // ),
                         ],
                       )),
                     ],

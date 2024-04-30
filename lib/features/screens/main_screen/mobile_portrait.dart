@@ -3,8 +3,21 @@ import 'package:flutter/material.dart';
 import 'contacts_row/index.dart';
 import 'mobile_app_bar.dart';
 
-class MobilePortraitScreen extends StatelessWidget {
+class MobilePortraitScreen extends StatefulWidget {
   const MobilePortraitScreen({super.key});
+
+  @override
+  State<MobilePortraitScreen> createState() => _MobilePortraitScreenState();
+}
+
+class _MobilePortraitScreenState extends State<MobilePortraitScreen> {
+  // @override
+  // void initState() {
+  //   SystemChrome.setPreferredOrientations([
+  //     DeviceOrientation.portraitUp,
+  //   ]);
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../model_screen/model_screen.dart';
-import '../blocs/sing_in_bloc/sign_in_bloc.dart';
+import '../../model_screen/index.dart';
 import 'my_text_field.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -23,24 +21,25 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignInBloc, SignInState>(
-      listener: (context, state) {
-        if (state is SignInSuccess) {
-          setState(() {
-            signInRequired = false;
-          });
-        } else if (state is SignInProcess) {
-          setState(() {
-            signInRequired = true;
-          });
-        } else if (state is SignInFailure) {
-          setState(() {
-            signInRequired = false;
-            _errorMsg = 'Invalid email or password';
-          });
-        }
-      },
-      child: Form(
+    // return BlocListener<SignInBloc, SignInState>(
+    //   listener: (context, state) {
+    //     if (state is SignInSuccess) {
+    //       setState(() {
+    //         signInRequired = false;
+    //       });
+    //     } else if (state is SignInProcess) {
+    //       setState(() {
+    //         signInRequired = true;
+    //       });
+    //     } else if (state is SignInFailure) {
+    //       setState(() {
+    //         signInRequired = false;
+    //         _errorMsg = 'Invalid email or password';
+    //       });
+    //     }
+    //   },
+    //   child: Form(
+        return Form(
         key: _formKey,
         child: Column(
           children: [
@@ -136,7 +135,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 : const CircularProgressIndicator(),
           ],
         ),
-      ),
+      // ),
     );
   }
 }
